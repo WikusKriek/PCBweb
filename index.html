@@ -18,31 +18,194 @@
           <div class="navbar">
             <div class="navbar-inner">
               <div class="title">Project Chiron Barrage</div>
+              <div class="subnavbar">
+        <div class="subnavbar-inner">
+          <div class="segmented segmented-raised">
+            <a class="button tab-link tab-link-active" href="#tab1">Status</a>
+            <a class="button tab-link" href="#tab2">Config</a>
+            <a class="button tab-link" href="#tab3">Fire</a>
+          </div>
+        </div>
+      </div>
             </div>
           </div>
 
 
-        <!--  <div class="toolbar">
-            <div class="toolbar-inner">
-              Bottom toolbar
+
+
+      <div class="page-content">
+        <div class="tabs">
+              <div class="tab tab-active" id="tab1">
+                <div class="title">Status</div>
+                <div class="block">
+                  <div class="row">
+                    <button class="col button button-fill button-round">Check ATRED Status</button>
+                  </div>
+                  <div class="list">
+                        <ul>
+                          <li>
+                            <div class="item-content">
+                              <div class="item-inner">
+                                <div class="item-title">Pan Status</div>
+                                <div class="item-after"><span class="badge color-green">OK</span></div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="item-content">
+                              <div class="item-inner">
+                                <div class="item-title">Tilt Status</div>
+                                <div class="item-after"><span class="badge color-green">OK</span></div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="item-content">
+                              <div class="item-inner">
+                                <div class="item-title">Firing System Status</div>
+                                <div class="item-after"><span class="badge color-green">READY</span></div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="item-content">
+                              <div class="item-inner">
+                                <div class="item-title">Reload Status</div>
+                                <div class="item-after"><span class="badge color-red">BUSY</span></div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                          </ul>
+                        </div>
+                </div>
+
+
+              </div>
+              <div class="tab" id="tab2">
+                <div class="block">
+                  <div class="block-title">ATRED Pan Value</div>
+                    <div class="block block-strong">
+                      <div class="range-slider range-slider-init"
+                        data-min="-135"
+                        data-max="135"
+                        data-label="true"
+                        data-step="1"
+                        data-value="0"
+                        data-scale="true"
+                        data-scale-steps="5"
+                        data-scale-sub-steps="4"
+                      ></div>
+                    </div>
+                    <div class="block-title">ATRED Tilt Value</div>
+                      <div class="block block-strong">
+                        <div class="range-slider range-slider-init"
+                          data-min="0"
+                          data-max="75"
+                          data-label="true"
+                          data-step="1"
+                          data-value="0"
+                          data-scale="true"
+                          data-scale-steps="5"
+                          data-scale-sub-steps="4"
+                        ></div>
+                      </div>
+                      <div class="block-title">ATRED Energy Value</div>
+                        <div class="block block-strong">
+                          <div class="range-slider range-slider-init"
+                            data-min="0"
+                            data-max="100"
+                            data-label="true"
+                            data-step="1"
+                            data-value="50"
+                            data-scale="true"
+                            data-scale-steps="5"
+                            data-scale-sub-steps="4"
+                          ></div>
+                        </div>
+                        <div class="block">
+                          <div class="row">
+                            <button class="col button button-fill button-round">Send Values</button>
+                          </div>
+
+                        </div>
+                </div>
+              </div>
+              <div class="tab" id="tab3">
+                <div class="block">
+                  <div class="list">
+                        <ul>
+                          <li>
+                            <div class="item-content">
+                              <div class="item-inner">
+                                <div class="item-title">Pan Value</div>
+                                <div class="item-after"><span class="badge color-orange">56</span></div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="item-content">
+                              <div class="item-inner">
+                                <div class="item-title">Tilt Value</div>
+                                <div class="item-after"><span class="badge color-orange">25</span></div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="item-content">
+                              <div class="item-inner">
+                                <div class="item-title">Energy Value</div>
+                                <div class="item-after"><span class="badge color-orange">75</span></div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="item-content">
+                              <div class="item-inner">
+                                <div class="item-title">System Status</div>
+                                <div class="item-after"><span class="badge color-green">READY</span></div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                          </ul>
+                        </div>
+                        <div class="block">
+                          <div class="row">
+                            <button class="col button button-fill button-round color-red">Fire</button>
+                          </div>
+
+                        </div>
+                </div>
+              </div>
             </div>
-          </div>
--->
-          <div class="page-content">
-            <div class="block-title">Example block</div>
-            <div class="block">
-              Add your content here
-            </div>
-            <div class="block">
-  <div class="row">
-    <button class="col button button-fill button-round">Check ATRED Status</button>
-  </div>
-</div>
+
+
+
+
+
+
+
+      </div>
           </div>
         </div>
       </div>
     </div>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/framework7/3.5.2/js/framework7.min.js"></script>
     <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript">
+alert("login1")
+
+
+      app.request.get("http://192.168.1.32/hello"
+
+     ,function(login,response,data){
+          // The full html of the authenticated page
+          alert("login")
+      });
+
+
+
+    </script>
   </body>
 </html>
