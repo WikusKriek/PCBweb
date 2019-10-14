@@ -1,7 +1,10 @@
-# framework7-simplest-template
-The simplest Framework7 template possible
+# framework7-website-atred
+Project Chiron Barrage
 
-Just download and edit:
+Website to controll atred:
 - index.html
 - main.css
 - main.js
+- requests/
+	-test.php
+	-test1.php
