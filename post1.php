@@ -7,9 +7,10 @@ $energy=$_GET['d'];
 
 $pan='150';
 $tilt='151';
-$url='http://192.168.1.17/api/v1/light/brightness';
+$url='http://192.168.1.17';
 $energy='152';
 
+$url=$url+"/api/v1/light/brightness";
 $fields = [
   'pan'=> $pan
   'tilt'=> $tilt
@@ -32,7 +33,7 @@ curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
 //curl_setopt($ch,CURLOPT_COOKIEJAR, $cookie);
 $result1 = curl_exec($ch);
 
-echo 'hello';
+echo '{"status":"{$result1}"}';
 
 
 curl_close($ch);
