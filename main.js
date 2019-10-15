@@ -24,6 +24,8 @@ function post1(){
           var str=data.responseText;
           var panstatus=str.charAt(0);
           var tiltstatus=str.charAt(1);
+          var firestatus=str.charAt(2);
+          var reloadstatus=str.charAt(3);
           if(panstatus=='1'){
           document.getElementById("panstatus").innerHTML='<span class="badge color-green">Ok</span>';
           }else{
@@ -33,6 +35,16 @@ function post1(){
           document.getElementById("tiltstatus").innerHTML='<span class="badge color-green">Ok</span>';
           }else{
             document.getElementById("tiltstatus").innerHTML='<span class="badge color-red">Error</span>';
+          }
+          if(firestatus=='1'){
+          document.getElementById("firestatus").innerHTML='<span class="badge color-green">Ok</span>';
+          }else{
+            document.getElementById("firestatus").innerHTML='<span class="badge color-red">Error</span>';
+          }
+          if(reloadstatus=='1'){
+          document.getElementById("reloadstatus").innerHTML='<span class="badge color-green">Ok</span>';
+          }else{
+            document.getElementById("reloadstatus").innerHTML='<span class="badge color-red">Error</span>';
           }
       });
 };
