@@ -63,7 +63,7 @@
                           <li>
                             <div class="item-content">
                               <div class="item-inner">
-                                <div class="item-title">Pan Status</div>
+                                <div class="item-title">Pan Position</div>
                                 <div id="panstatus" class="item-after"><span class="badge color-green">OK</span></div>
                               </div>
                             </div>
@@ -71,7 +71,7 @@
                           <li>
                             <div class="item-content">
                               <div class="item-inner">
-                                <div class="item-title">Tilt Status</div>
+                                <div class="item-title">Tilt Position</div>
                                 <div id="tiltstatus" class="item-after"><span class="badge color-green">OK</span></div>
                               </div>
                             </div>
@@ -87,8 +87,8 @@
                           <li>
                             <div class="item-content">
                               <div class="item-inner">
-                                <div class="item-title">Reload Status</div>
-                                <div id="reloadstatus" class="item-after"><span class="badge color-red">BUSY</span></div>
+                                <div class="item-title">Energy Value</div>
+                                <div id="energyvalue" class="item-after"><span class="badge color-red">BUSY</span></div>
                               </div>
                             </div>
                           </li>
@@ -159,32 +159,49 @@
                           <li>
                             <div class="item-content">
                               <div class="item-inner">
-                                <div class="item-title">Pan Value</div>
-                                <div class="item-after"><span class="badge color-orange">56</span></div>
+                                <div class="item-title">Pan Position</div>
+                                <div id="panp" class="item-after"><span class="badge color-orange">56</span></div>
                               </div>
                             </div>
                           </li>
                           <li>
                             <div class="item-content">
                               <div class="item-inner">
-                                <div class="item-title">Tilt Value</div>
-                                <div class="item-after"><span class="badge color-orange">25</span></div>
+                                <div  class="item-title">Pan Status</div>
+                                <div id="pans"class="item-after"><span class="badge color-orange">25</span></div>
                               </div>
                             </div>
                           </li>
+                          <li>
+                            <div class="item-content">
+                              <div class="item-inner">
+                                <div class="item-title">Tilt Position</div>
+                                <div id="tiltp"class="item-after"><span class="badge color-orange">56</span></div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="item-content">
+                              <div class="item-inner">
+                                <div class="item-title">Tilt Status</div>
+                                <div id="tilts" class="item-after"><span class="badge color-orange">25</span></div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
                           <li>
                             <div class="item-content">
                               <div class="item-inner">
                                 <div class="item-title">Energy Value</div>
-                                <div class="item-after"><span class="badge color-orange">75</span></div>
+                                <div id="energyv"class="item-after"><span class="badge color-orange">75</span></div>
                               </div>
                             </div>
                           </li>
                           <li>
                             <div class="item-content">
                               <div class="item-inner">
-                                <div class="item-title">System Status</div>
-                                <div class="item-after"><span class="badge color-green">READY</span></div>
+                                <div class="item-title">Firing Status</div>
+                                <div id="firingstatus" class="item-after"><span class="badge color-green">READY</span></div>
                               </div>
                             </div>
                           </li>
@@ -193,7 +210,7 @@
                         </div>
                         <div class="block">
                           <div class="row">
-                            <button class="col button button-fill button-round color-red">Fire</button>
+                            <button class="col button button-fill button-round color-red" onClick='post4();'>Fire</button>
                           </div>
 
                         </div>

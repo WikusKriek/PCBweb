@@ -22,30 +22,23 @@ function post1(){
      ,function(login,response,data){
           // The full html of the authenticated page
           var str=data.responseText;
-          var panstatus=str.charAt(0);
-          var tiltstatus=str.charAt(1);
-          var firestatus=str.charAt(2);
-          var reloadstatus=str.charAt(3);
-          if(panstatus=='1'){
-          document.getElementById("panstatus").innerHTML='<span class="badge color-green">Ok</span>';
-          }else{
-            document.getElementById("panstatus").innerHTML='<span class="badge color-red">Error</span>';
-          }
-          if(tiltstatus=='1'){
-          document.getElementById("tiltstatus").innerHTML='<span class="badge color-green">Ok</span>';
-          }else{
-            document.getElementById("tiltstatus").innerHTML='<span class="badge color-red">Error</span>';
-          }
+          var panvalue=str.slice(0, 3);
+          var tiltvalue=str.slice(4, 6);
+          var firingvalue=str.slice(11, 14);
+          var firestatus=str.charAt(15);
+
+          document.getElementById("panstatus").innerHTML=`<span class="badge color-orange">${panvalue}</span>`;
+
+
+          document.getElementById("tiltstatus").innerHTML=`<span class="badge color-orange">${tiltvalue}</span>`;
+          document.getElementById("energyvalue").innerHTML=`<span class="badge color-orange">${firingvalue}</span>`;
+
           if(firestatus=='1'){
           document.getElementById("firestatus").innerHTML='<span class="badge color-green">Ok</span>';
           }else{
             document.getElementById("firestatus").innerHTML='<span class="badge color-red">Error</span>';
           }
-          if(reloadstatus=='1'){
-          document.getElementById("reloadstatus").innerHTML='<span class="badge color-green">Ok</span>';
-          }else{
-            document.getElementById("reloadstatus").innerHTML='<span class="badge color-red">Error</span>';
-          }
+
       });
 };
 function post2(pan,tilt,energy,url){
@@ -59,12 +52,45 @@ function post2(pan,tilt,energy,url){
 };
 
 function post3(){
-
+document.getElementById("firingstatus").innerHTML='<span class="badge color-green">Ready</span>';
   app.request.get(`requests/test.php?a=${app.range.getValue("#panslider")}&b=${app.range.getValue("#tiltslider")}&c=${app.range.getValue("#energyslider")}&d=${localStorage.getItem("url")+"/api/v1/light/brightness"}`
 
      ,function(login,response,data){
           // The full html of the authenticated page
+          var str=data.responseText;
+          var panvalue=str.slice(0, 3);
+          var tiltvalue=str.slice(4, 6);
+          var panstatus=str.charAt(7);
+          var tiltstatus=str.charAt(9);
+          if(panstatus=='1'){
+          document.getElementById("pans").innerHTML='<span class="badge color-green">Ok</span>';
+          }else{
+            document.getElementById("pans").innerHTML='<span class="badge color-red">Error</span>';
+          }
+          if(tiltstatus=='1'){
+          document.getElementById("tilts").innerHTML='<span class="badge color-green">Ok</span>';
+          }else{
+            document.getElementById("tilts").innerHTML='<span class="badge color-red">Error</span>';
+          }
+          document.getElementById("panp").innerHTML=`<span class="badge color-orange">${panvalue}</span>`;
+          document.getElementById("tiltp").innerHTML=`<span class="badge color-orange">${tiltvalue}</span>`;
+          document.getElementById("energyv").innerHTML=`<span class="badge color-orange">${app.range.getValue("#energyslider")}</span>`;
           console.log(data);
       });
 
+};
+function post4(){
+  document.getElementById("firingstatus").innerHTML='<span class="badge color-orange">Firing</span>';
+  app.request.get(`requests/test1.php?d=${localStorage.getItem("url")+"/echo"}`
+
+     ,function(login,response,data){
+          // The full html of the authenticated page
+          var str=data.responseText;
+          if(str=='1'){
+          document.getElementById("firingstatus").innerHTML='<span class="badge color-green">Completed</span>';
+          }else{
+            document.getElementById("firingstatus").innerHTML='<span class="badge color-red">Error</span>';
+          }
+
+      });
 };
